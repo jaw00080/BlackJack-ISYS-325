@@ -37,8 +37,8 @@ namespace BlackJack_ISYS_325
         {
             if (deck.Cards.Count > 0)
             {
-                PlayerHand.Add(deck.Cards[0]);
-                deck.Cards.RemoveAt(0);
+                PlayerHand.Add(deck.Cards[0]); // adds a card to the collection
+                deck.Cards.RemoveAt(0); // removes it from the list of cards in the deck
             }
         }
 
@@ -46,8 +46,8 @@ namespace BlackJack_ISYS_325
         {
             if (deck.Cards.Count > 0)
             {
-                DealerHand.Add(deck.Cards[0]);
-                deck.Cards.RemoveAt(0);
+                DealerHand.Add(deck.Cards[0]); // Adds a card to the collection
+                deck.Cards.RemoveAt(0); // removes it from the list of cards in the deck
             }
         }
 
@@ -107,7 +107,7 @@ namespace BlackJack_ISYS_325
             }
             else
             {
-                deckwindow.Activate(); 
+                deckwindow.Activate(); // Pulls the existing window to the front if it's already open
             }
             
         }
@@ -122,7 +122,7 @@ namespace BlackJack_ISYS_325
             DealPlayer();
             UpdateScores();
             int playerScore = CalculateScore(PlayerHand);
-            if (playerScore > 21)
+            if (playerScore > 21) // Starts the game over if the player busts
             {
                 MessageBox.Show("Player busts! Dealer wins.");
                 StartGame();

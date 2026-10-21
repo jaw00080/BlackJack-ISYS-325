@@ -25,7 +25,7 @@ namespace BlackJack_ISYS_325
 
         public void ShuffleDeck()
         {
-            Random rng = new Random();
+            Random rng = new Random(); // This was autofilled, but it works.
             int n = Cards.Count;
             while (n > 1)
             {

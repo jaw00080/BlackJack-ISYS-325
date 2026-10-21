@@ -11,12 +11,12 @@ namespace BlackJack_ISYS_325
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is not Card card)
+            if (value is not Card card) // Check if the value is not of type Card, if not, return null
                 return null;
 
             int iIndex;
 
-            if (card.Rank == 13)
+            if (card.Rank == 13) // If the card's rank is 13 (King), set the index to 0, otherwise set it to the card's rank
             {
                 iIndex = 0;
 
@@ -28,7 +28,7 @@ namespace BlackJack_ISYS_325
 
             int suitIndex = 0;
 
-            switch (card.Suit)
+            switch (card.Suit) // Uses a switch statement to determine the suit index based on the card's suit
             {
                 case "Clubs":
                     suitIndex = 0;
@@ -43,11 +43,11 @@ namespace BlackJack_ISYS_325
                     suitIndex = 39;
                     break;
             }
-            int imageNum = suitIndex + iIndex;
+            int imageNum = suitIndex + iIndex; // Calculate the image number by adding the suit index and the card's rank index
             return $"/Images/p{imageNum}.png";
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) 
         {
             return null;
         }
